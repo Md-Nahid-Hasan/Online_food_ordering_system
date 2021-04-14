@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
     char fullname[30];
-    char piz1[]="Pizza Roma" ,piz2[]="Pizza Bar BQ Chicken" ,piz3[]="Pizza Deshi" ,piz4[]="Pizza Tandoori";
-	char burger_1[]="Zinger Burger",burger_2[]="Chicken Burger",burger_3[]="Beef Burger";
-	char sandwich_1[]="Club Sandwich", sandwich_2[]="Chicken Crispy Sandwich", sandwich_3[]="Extream Veg Sandwich";
-	char drinks1[]="Mountain Dew", drinks2[]="Coca Cola", drinks3[]="Pepsi";
-	char fried1[]="Chicken Fried", fried2[]="Prawn Fried", fried3[]="Beef Fried";
-	char gotobeginning ;
+    string piz1="Pizza Roma" , piz2="Pizza Bar BQ Chicken" , piz3="Pizza Deshi" , piz4="Pizza Tandoori";
+	string burger_1="Zinger Burger",burger_2="Chicken Burger",burger_3="Beef Burger";
+	string sandwich_1="Club Sandwich", sandwich_2="Chicken Crispy Sandwich", sandwich_3="Extream Veg Sandwich";
+	string drinks1="Mountain Dew", drinks2="Coca Cola", drinks3="Pepsi";
+	string fried1="Chicken Fried", fried2="Prawn Fried", fried3="Beef Fried";
+	string gotobeginning ;
 	int option,option1,option2,quantity;
 
 
@@ -18,7 +18,7 @@ void registration(){
 	cout<<"\t\t\t|-----------------------------------------------------|\n\n";
 
     cout<<"Please Enter Your Name          : ";
-    cin.getline(fullname, 20);
+    cin.getline(fullname, 30);
 
     starting:
     cout<<"\nPlease Enter Your Mobile Number : ";
@@ -102,9 +102,10 @@ void display_bill(int option){
 
 }
 
+
 void pizza_category();
 
-void pizza_size(){
+void pizza_size(string piz_name){
     system("cls");
     starting:
     cout<<"\n\t\t\t|-----------------------------------------------------|\n";
@@ -140,25 +141,25 @@ void pizza_size(){
 			{
 			 case 1:
              display_order();
-			 cout<<""<<quantity<<" Small "<<piz1;
+			 cout<<""<<quantity<<" Small "<<piz_name;
              display_bill(option);
 			 break;
 			 case 2:
 			 display_order();
-			 cout<<""<<quantity<<" Regular "<<piz1;
+			 cout<<""<<quantity<<" Regular "<<piz_name;
 			 display_bill(option);
 			 break;
 			 case 3:
 			 display_order();
-			 cout<<""<<quantity<<" Large "<<piz1;
+			 cout<<""<<quantity<<" Large "<<piz_name;
 			 display_bill(option);
 			 break;
 
-
 			}
+
 			cout<<"Would You Like To Order Anything Else? Y / N:";
 			cin>>gotobeginning;
-			if(gotobeginning=='Y' || gotobeginning=='y')
+			if(gotobeginning=="Y" || gotobeginning=="y")
 			{
 			  system("cls");
 			  cout<<"\n\nThank You For Ordering From Rah Fast Food\n\n";
@@ -203,7 +204,22 @@ void pizza_category(){
 		cin>>option1;
 		if(option1>=1 && option1<=4)
 		{
-            pizza_size();
+            string piz_name;
+            if(option1==1){
+                piz_name=piz1;
+            }
+            else if(option1==2){
+                piz_name=piz2;
+            }
+            else if(option1==3){
+                piz_name=piz3;
+            }
+            else if(option1==4){
+                piz_name=piz4;
+            }
+
+            pizza_size(piz_name);
+
 
 		}
 		else if(option1==5)
@@ -256,7 +272,7 @@ void burger_size(){
 
 			cout<<"\nWould You Like To Order Anything Else? Y / N:";
 			cin>>gotobeginning;
-			if(gotobeginning=='Y' || gotobeginning=='y')
+			if(gotobeginning=="Y" || gotobeginning=="y")
 			{
               system("cls");
 			  cout<<"\n\nThank You For Ordering From Rah Fast Food\n\n";
@@ -333,7 +349,7 @@ void sandwich_size(){
 			}
 			cout<<"Would You Like To Order Anything Else? Y / N:";
 			cin>>gotobeginning;
-			if(gotobeginning=='Y' || gotobeginning=='y')
+			if(gotobeginning=="Y" || gotobeginning=="y")
 			{
 			  system("cls");
 			  cout<<"\n\nThank You For Ordering From Rah Fast Food\n\n";
@@ -407,7 +423,7 @@ void drinks_size(){
         }
         cout<<"Would You Like To Order Anything Else? Y / N:";
         cin>>gotobeginning;
-        if(gotobeginning=='Y' || gotobeginning=='y')
+        if(gotobeginning=="Y" || gotobeginning=="y")
         {
             system("cls");
             cout<<"\n\nThank You For Ordering From Rah Fast Food\n\n";
@@ -483,7 +499,7 @@ void fried_size(){
 			}
 			cout<<"Would You Like To Order Anything Else? Y / N:";
 			cin>>gotobeginning;
-			if(gotobeginning=='Y' || gotobeginning=='y')
+			if(gotobeginning=="Y" || gotobeginning=="y")
 			{
 			  system("cls");
 			  cout<<"\n\nThank You For Ordering From Rah Fast Food\n\n";
